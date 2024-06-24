@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class a{
+        //     show1(){
+        //         console.log("A method is called")
+        //     }
+        // }
+        // class b extends a{
+        //     show2(){
+        //         console.log("B method is called")
+        //     }
+        // }
+        // class c extends b {
+        //     show3(){
+        //         console.log("C method is called")
+        //     }
+        // }
+        // const c1 = new c()
+        // c1.show1()
+        // c1.show2()
+        // c1.show3()
+
+        class A{
+            constructor(name,email,erno){
+                this.erno = erno
+                this.name = name 
+                this.email = email
+            }
+        }
+        class B extends A{
+            constructor(name,email,erno,address){
+                super(name,email,erno)
+                    this.address = address
+                }
+            }
+        class C extends B{
+            constructor(name,email,erno,address,course){
+                super(name,email,erno,address)
+                this.course = course
+            }
+
+            show(){
+                document.write("Student Details:" + "<br>")
+                document.write("Name is: ",this.name+"<br>")
+                document.write("Email is: ",this.email+"<br>")
+                document.write("Erno  is: ",this.erno+"<br>")
+                document.write("Address is: ",this.address+"<br>")
+                document.write("Course is: ",this.course+"<br>")
+            }
+        }
+
+        const c1 = new C("sahil","sahil975@gmail.com",198,"isanpur","Bca")
+        c1.show()
+    </script>
+</body>
+</html>

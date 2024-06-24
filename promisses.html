@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+<body>
+    <script>
+        const calculate = (val1,val2,callback) => {
+            return new Promise((resolve) => {
+                resolve (callback(val1,val2))
+            })
+        }
+
+        calculate(3,5,(num1,num2) => {
+            return num1 + num2
+        }).then((sum) => {
+            console.log("The sum is: "+sum)
+        })
+    </script>
+</body>
+</html>

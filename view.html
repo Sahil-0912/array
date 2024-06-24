@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cartView</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container my-5 p-5" id="output"></div>
+    <!-- <div class="row shadow p-5">
+        <div class="col-lg-4">
+            <img src="" class="w-100" height="300">
+        </div>
+        <div class="col-lg-8">
+            <h3>${element.Category}</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div> -->
+    
+
+
+    <div class="node" id="node"></div>
+    <div class="cursor" id="cursor"></div>
+    <script>
+        function showcart() {
+            const cart = JSON.parse(localStorage.getItem('cartList'))
+            let result = " "
+            cart.forEach((element, index) => {
+                result +=
+                    `
+                <div class="row shadow p-5">
+        <div class="col-lg-4 my-3">
+                <img src="${element.img}" class="w-100" height="300">
+        </div>
+        <div class="col-lg-8 my-3">
+            <h3>${element.procategory}</h3>
+            <ul>
+                <li>Product Name: ${element.pname}</li>
+                <li>Product Price: ${element.proprice}</li>
+                <li>Product Description: ${element.prodesc}</li>
+                <li>Product Quantity: ${element.proqunatity * element.count}</li>
+                <li>Toatl Amount: ${element.proprice * element.count}</li>
+            </ul>
+            <input type="number" name="pname" id="" class="form-control" max="5" min="1">
+        </div>
+    </div>
+                `
+            });
+            document.querySelector('#output').innerHTML = result
+        }
+        showcart()
+
+        // function removeProduct(cartid) {
+        //     if (confirm("Do you want to delete")) {
+        //         let product = JSON.parse(localStorage.getItem('cartList'))
+        //         product.splice(cartid, 1)
+
+        //         localStorage.setItem('cartList', JSON.stringify(product))
+        //         showcart()
+        //     }
+        // }
+    </script>
+
+   
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: #fff;
+        }
+        </style>
+</head>
+<body>
+    <h1 id="date"></h1>
+    <script>
+        setInterval(() => {
+            const expiredate = new Date("June 18 2024")
+            const currentdate = new Date()
+            const finalDate = expiredate - currentdate
+
+            if(expiredate > currentdate){
+                var days = Math.floor(finalDate / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((finalDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((finalDate % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((finalDate % (1000 * 60)) / 1000);
+
+                const result = `${days}d: ${hours}h: ${minutes}m : ${seconds}s`
+                document.querySelector('#date') .innerHTML = result
+
+            }else{
+                document.querySelector('#date') .innerHTML = "expire"
+
+            }
+        },1000)
+    </script>
+</body>
+</html>

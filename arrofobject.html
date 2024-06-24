@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var std1 = {
+        //     id:198,
+        //     name:"sahil"
+        // }
+        // var std2 = {
+        //     id:100,
+        //     name:"ritesh"
+        // }
+        // var std3 = {
+        //     id:163,
+        //     name:"sufiyan"
+        // }
+
+        // var student = [std1,std2,std3]
+        // console.log(student)
+
+        var std = [
+            {
+                id:198,
+                name:"sahil"
+            },
+            {
+                id:100,
+                name:"ritesh"
+            },
+            {
+                id:163,
+                name:"ritesh"
+            }
+        ]
+        console.log(std)
+        for(var newarr in std){
+            console.log(newarr)
+            console.log(std[newarr])
+            console.log(`id = ${newarr.id} name = ${newarr.name}`)
+        }
+        
+        std.forEach((ele,index,arr)=>{
+            console.log(`index = ${index},id = ${ele.id},name = ${ele.name}`)
+        })
+    </script>
+</body>
+</html>

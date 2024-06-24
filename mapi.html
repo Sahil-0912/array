@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function showmapi() {
+            const url = 'https://imdb146.p.rapidapi.com/v1/name/?id=nm0000093';
+
+            const options = {
+                    method: 'GET',
+                    headers: {
+                        'x-rapidapi-key': '231fdf7d6fmsh51688b82dbcb1a3p1c14bejsnf5e0edf4ce92',
+                        'x-rapidapi-host': 'imdb146.p.rapidapi.com'
+                    }
+                }
+
+            const res = await fetch(url, options)
+            const data = await res.json()
+            console.log(data)
+            }
+            showmapi()
+    </script>
+</body>
+
+</html>

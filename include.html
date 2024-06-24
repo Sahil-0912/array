@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [21,23,44,65,78,32]
+
+        // document.write(arr.includes(21+))
+
+
+        var result = arr.some((ele)=>{
+            return ele > 23
+        })
+        document.write(result)
+
+        var result = arr.every((ele)=>{
+            return ele > 23
+        })
+        document.write(result)
+
+
+    </script>
+</body>
+</html>

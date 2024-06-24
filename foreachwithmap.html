@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [10, 20, 36, 30, 45, 59]
+
+        arr.forEach((ele) => {
+            document.write(ele + "<br>")
+        })
+        document.write("using map <br>")
+        arr.map((ele) => {
+            document.write(ele + "<br>")
+        })
+
+        var newar = arr.forEach((ele) => {
+            return ele * 2
+        })
+        
+        document.write(newar + "<br>")
+        document.write("map using return <br>")
+        var newar = arr.map((ele) => {
+            return ele * 2
+        })
+        document.write(newar + "<br>")
+
+        document.write("filter <br>")
+        var filterarr = arr.filter((ele) => {
+            return ele > 30
+        })
+        document.write(filterarr)
+    </script>
+
+</body>
+
+</html>

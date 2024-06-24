@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="value1">
+    <button id="calc">click</button>
+    <script>
+        var calc = document.querySelector('#calc')
+        calc.addEventListener('click',()=>{
+            var value1 = document.querySelector('#value1').value
+            try{
+                if(value1 ==""){
+                    throw "Enter the value"
+                }
+                else if(isNaN(value1)){
+                    throw "plese enter a correct value"
+                }
+                else {
+                    throw value1
+                }
+            }catch(error){
+                alert(error)
+            }
+        })
+    </script>
+</body>
+</html>

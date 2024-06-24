@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DogApi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 class="text-center">Dog Api</h1>
+     <input type="text" id="num">
+     <button onclick="showdogapi()">showDog</button>
+    <div id="img"></div>
+    <script>
+         async function showdogapi() {
+            const num = document.querySelector('#num').value
+            const res = await fetch(`https://dog.ceo/api/breeds/image/random/${num}`)
+            const dogdata = await res.json()
+            console.log(dogdata)
+            const result = dogdata.message
+            console.log(result)
+
+            let output = " "
+            result.forEach((images) => {
+                output +=
+                `<img src="${images}" height="300" width="300">`
+            });
+
+            document.querySelector('#img') .innerHTML = output
+        }
+       
+        
+    </script>
+</body>
+
+</html>

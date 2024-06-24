@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="col-6 mx-auto p-5  shadow">
+    <form method="post">
+        <div class="container my-5 shadow w-75">
+            <div class="mb-3 my-3">
+                <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+                <input type="email" class="form-control" id="stdname"
+                    aria-describedby="emailHelp" placeholder="Enter Std Name">
+            </div>
+            <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter Email">
+            </div>
+            <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                <input type="email" class="form-control" id="mobile" aria-describedby="emailHelp"
+                    placeholder="Enter Mobile">
+            </div>
+            <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                <input type="email" class="form-control" id="pname" aria-describedby="emailHelp"
+                    placeholder="Enter Parent Name">
+            </div>
+            <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                <input type="email" class="form-control" id="pmobile" aria-describedby="emailHelp"
+                    placeholder="Enter Parent Mobile">
+            </div>
+            <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                <input type="email" class="form-control" id="prelation" aria-describedby="emailHelp"
+                    placeholder="Enter Relation">
+            </div>
+            <div class="mb-3 mx-auto">
+                <button type="button" class="btn btn-success mb-3" id="submitdata">Submit</button>
+            </div>
+    </form>
+</div>
+    </div>
+    <div id="output"></div>
+</body>
+<script>
+    var submitdata = document.querySelector('#submitdata')
+    submitdata.addEventListener('click', () => {
+        var stdname = document.querySelector('#stdname').value
+        var email = document.querySelector('#email').value
+        var mobile = document.querySelector('#mobile').value
+        var pname = document.querySelector('#pname').value
+        var pmobile = document.querySelector('#pmobile').value
+        var prelation = document.querySelector('#prelation').value
+
+        class student {
+            constructor(stdname, email, mobile) {
+                this.stdname = stdname
+                this.mobile = mobile
+                this.email = email
+
+            }
+        }
+
+        class Parent extends student {
+            constructor(stdname, email, mobile, pname, pmobile, prelation) {
+                super(stdname, email, mobile)
+                this.pname = pname
+                this.pmobile = pmobile
+                this.prelation = prelation
+            }
+            display() {
+                document.write(`Student Name is = ${this.stdname} <br> Student Mobile is = ${this.mobile} <br> Student Email is = ${this.email} <br> <br> Parent Name is = ${this.pname} <br> Parent Mobile is = ${this.pmobile} <br> Parent Relation is = ${this.prelation}`)
+            }
+        }
+        const prnt = new Parent(stdname, email, mobile, pname, pmobile, prelation)
+        prnt.display()
+
+    })
+
+
+
+</script>
+
+</html>

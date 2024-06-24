@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main mx-5 my-5">
+        <input type="text" id="res" placeholder="">
+        <br>
+        <div class="btn text-center">
+            <button class="btn btn-warning" value="+" onclick="calc(this.value)">+</button>
+            <button class="btn btn-warning" value="-" onclick="calc(this.value)">-</button>
+            <button class="btn btn-warning" value="/" onclick="calc(this.value)">/</button>
+            <button class="btn btn-warning" value="*" onclick="calc(this.value)">*</button>
+            <br>
+            
+            <button class="btn btn-warning equal" value="=" onclick="output(this.value)">=</button>
+            <br>
+            <div class="btn-2">
+                <button class="btn btn-warning" value="7" onclick="calc(this.value)">7</button>
+                <button class="btn btn-warning" value="8" onclick="calc(this.value)">8</button>
+                <button class="btn btn-warning" value="9" onclick="calc(this.value)">9</button>
+                <br>
+                <button class="btn btn-warning" value="4" onclick="calc(this.value)">4</button>
+                <button class="btn btn-warning" value="5" onclick="calc(this.value)">5</button>
+                <button class="btn btn-warning" value="6" onclick="calc(this.value)">6</button>
+                <br>
+                <button class="btn btn-warning" value="1" onclick="calc(this.value)">1</button>
+                <button class="btn btn-warning" value="2" onclick="calc(this.value)">2</button>
+                <button class="btn btn-warning" value="3" onclick="calc(this.value)">3</button>
+                <br>
+                <button class="btn btn-warning" value="0" onclick="calc(this.value)">0</button>
+                <button class="btn btn-warning" value="AC" onclick="lastdelete(this.value)">AC</button>
+                <button class="btn btn-warning" value="c" onclick="clearAll()(this.value)">c</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

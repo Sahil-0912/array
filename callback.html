@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+<body>
+    <script>
+        const calculate = (val1,val2,callback) => {
+            return callback (val1,val2)
+        }
+
+        const add = calculate(3,2,(num1,num2) => {
+            return num1 + num2
+        })
+
+        console.log("Addition is: " + add)
+
+        const sub = calculate(5,2,(num1,num2) => {
+            return num1 - num2
+        })
+
+        console.log("The Sub is:" + sub)
+    </script>
+</body>
+</html>

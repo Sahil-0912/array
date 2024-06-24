@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date();
+        console.log(typeof date)
+
+        console.log(date)
+        console.log(date.getDate())
+        console.log(date.getDay())
+        console.log(date.getMonth())
+        console.log(date.getFullYear())
+        console.log(date.getMinutes())
+        console.log(date.getSeconds())
+        console.log(date.getHours())
+        console.log(date.toDateString())
+        console.log(date.toLocaleDateString())
+        console.log(date.toTimeString())
+        console.log(date.toLocaleString())
+
+        var month = ["jan","feb","march","april","may","june"]
+        var days = ["sun","mon","tues","wed","thus","fri","saturday"]
+        
+        var finalmonth = month[date.getMonth()]
+        console.log(finalmonth)
+
+        var finaldays = days[date.getDay()]
+        console.log(finaldays)
+    </script>
+</body>
+</html>

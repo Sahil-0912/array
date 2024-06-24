@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class common{
+            constructor(name,mobile,email){
+                this.name = name
+                this.mobile = mobile
+                this.email = email
+            }
+        }
+        class student extends common{
+            constructor(name,mobile,email,GRID){
+                super(name,mobile,email)
+                this.GRID = GRID
+            }
+
+            show(){
+                document.write(`Name is = ${this.name} Mobile is = ${this.mobile} Email is = ${this.email} GRID is = ${this.GRID} <br> `)
+            }
+        }
+
+        class Parent extends common {
+            constructor(name,mobile,email,relation){
+                super(name,mobile,email)
+                this.relation = relation
+            }
+
+            show(){
+                document.write(`Name is = ${this.name} Mobile is = ${this.mobile} Email is = ${this.email} Relation is = ${this.relation}`)
+            }
+        }
+
+        const s1 = new student("sahil",7621922538,"sahil975@gmail.com",198)
+        const p1 = new Parent("sahil",7621922538,"sahil975@gmail.com","Father")
+        s1.show()
+        p1.show()
+    </script>
+</body>
+</html>

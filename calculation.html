@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        body {
+            width: 500px;
+            margin:50px auto;
+            font-family: 'Source Sans Pro', sans-serif;
+            letter-spacing: 5px;
+            font-size: 18px;
+            /* border: 1px solid; */
+
+        }
+
+        .calculator {
+            padding: 20px;
+           
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 1px;
+            background-color: black;
+        }
+
+        .input {
+            border: 1px solid #ddd;
+            border-radius: 1px;
+            height: 60px;
+            padding-right: 15px;
+            padding-top: 10px;
+            text-align: right;
+            margin-right: 6px;
+            font-size: 2.5rem;
+            overflow-x: auto;
+            transition: all .2s ease-in-out;
+        }
+
+        .operators div {
+            display: inline-block;
+            border: 1px solid #bbb;
+            border-radius: 1px;
+            width: 80px;
+            text-align: center;
+            padding: 10px;
+            margin: 20px 4px 10px 0;
+            cursor: pointer;
+            background-color: #ddd;
+        }
+
+        div.equal {
+            display: inline-block;
+            border: 1px solid #3079ED;
+            border-radius: 1px;
+            width: 17%;
+            text-align: center;
+            padding: 127px 10px;
+            margin: 10px 6px 10px 0;
+            vertical-align: top;
+            cursor: pointer;
+            color: #FFF;
+            background-color: #4d90fe;
+            transition: all .2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calulator">
+        <div class="input" id="input"></div>
+        <div class="operators">
+            <div>+</div>
+            <div>-</div>
+            <div>*</div>
+            <div>/</div>
+        </div>
+        <div class="operators">
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+        <div class="operators">
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+        <div class="operators">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="operators">
+            <div>0</div>
+            <div>.</div>
+            <div>c</div>
+        </div>
+        <div class="equal">=</div>
+    </div>
+</body>
+
+</html>

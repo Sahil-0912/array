@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Api</title>
+</head>
+
+<body>
+    <div id="img"></div>
+    <script>
+        async function Movie() {
+            const url = 'https://imdb-top-100-movies.p.rapidapi.com/'
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': '9e454526dcmsh50979b875d443a1p184dc2jsnb8dd43c04c43',
+                    'x-rapidapi-host': 'imdb-top-100-movies.p.rapidapi.com'
+                }
+            }
+            const res = await fetch(url, options)
+            const data = await res.json()
+            console.log(data)
+            console.log(data[0].image)
+            // const images = data.image
+            // console.log(images)
+            let result = ""
+            data.forEach((element) => {
+                result += `
+                <img src="${element.image}"/>
+                `
+            });
+            document.querySelector('#img').innerHTML = result
+
+        }
+        Movie() 
+    </script>
+</body>
+
+</html>

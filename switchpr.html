@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <input type="number" placeholder="enter the First number" id="vone" class="shadow"> <br> <br>
+        <input type="number" placeholder="enter the Second number" id="vtwo" class="shadow"><br> <br>
+        <button class="btn btn-primary " onclick="calc(1)"> + </button>
+        <button class="btn btn-primary " onclick="calc(2)"> - </button>
+        <button class="btn btn-primary " onclick="calc(3)"> * </button>
+        <button class="btn btn-primary " onclick="calc(4)"> / </button>
+        <button class="btn btn-primary " onclick="calc(5)"> % </button>
+        <div id="output"></div>
+</body>
+<script>
+    function calc(choice) {
+        var vone = document.querySelector('#vone').value
+        var vtwo = document.querySelector('#vtwo').value
+        var result
+
+        switch (choice) {
+            case 1:
+                vone = Number(vone)
+                vtwo = Number(vtwo)
+                result = (vone + vtwo)
+                break
+            case 2:
+                result = (vone - vtwo)
+                break
+            case 3:
+                result = (vone * vtwo)
+                break
+            case 4:
+                result = (vone / vtwo)
+                break
+            case 5:
+                result = (vone % vtwo)
+                break
+        }
+
+        var output = document.querySelector('#output')
+        output.innerHTML = `The Addition is ${vone} ${vtwo} = ${result}`
+    }
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>import export</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 50px;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div id="ack"></div>
+    <script type="module">
+
+        import dateconvert from './dateformet.js'
+
+        const date = new Date()
+        const result = dateconvert(date)
+
+        document.querySelector('#ack').innerHTML = result
+    </script>
+</body>
+
+</html>

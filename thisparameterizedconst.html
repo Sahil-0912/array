@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class student {
+            constructor(eno, name, add) {
+                this.eno = eno
+                this.name = name
+                this.add = add
+            }
+            show() {
+                document.write("Student Details" + "<br>")
+                document.write(`EnroolMentNo is: ${this.eno} <br>`)
+                document.write(`Name is: ${this.name} <br>`)
+                document.write(`Address is: ${this.add} <br>`)
+
+            }
+        }
+
+        const s1 = new student(198,"Sahil","isanpur")
+        s1.show()
+    </script>
+</body>
+
+</html>
