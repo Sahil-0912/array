@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="col-6 mx-auto my-5 p-2">
+        <input type="text" name="" id="vone">
+        <button class="btn" onclick="sum()">submit</button>
+    </div>
+    <script>
+        function sum() {
+            const vone = document.querySelector('#vone').value
+            console.log(vone)
+
+            const vonedata = vone.split(",")
+            console.log(vonedata)
+
+            const elementdata = vonedata.map(Number)
+            console.log(elementdata)
+
+            const sum = elementdata.reduce((accumlatter,currentvalue) => {
+                return accumlatter + currentvalue
+            },0)
+
+            console.log(sum)
+        }
+
+    </script>
+</body>
+
+</html>

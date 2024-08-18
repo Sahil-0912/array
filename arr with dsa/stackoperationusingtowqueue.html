@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Stackusingtwoqueue {
+            constructor() {
+                this.queue1 = [];
+                this.queue2 = [];
+            }
+
+            push(element) {
+                this.queue1.push(element)
+                while (this.queue2.length > 0) {
+                    this.queue1.push(this.queue2.shift())
+                }
+                // console.log("before");
+                // console.log(this.queue1);
+                // console.log(this.queue2);
+
+                // swapping
+                const temp = this.queue2
+                this.queue2 = this.queue1
+                this.queue1 = temp;
+
+                // console.log("after");
+                // console.log(this.queue1);
+                // console.log(this.queue2);
+            }
+
+            isempty() {
+                return this.queue2.length == 0
+            }
+            pop() {
+                if (this.isempty()) {
+                    return "stack underflow"
+                }
+                return this.queue2.shift()
+            }
+
+            peek(){
+                return this.queue2[0]
+            }
+        }
+
+        const stack = new Stackusingtwoqueue()
+        stack.push(5)
+        stack.push(6)
+        stack.push(7)
+        stack.push(8)
+        console.log("pop...................................");
+        console.log(stack.pop());
+        console.log(stack.pop());
+        console.log(stack.pop());
+        console.log("Peek..................................");
+        console.log(stack.peek());
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Stack {
+            constructor(str) {
+                this.str = str
+                this.arr = [];
+            }
+            reverse() {
+                const arr = this.str.split('')
+                console.log(arr);
+                
+                for(var newstr of this.str){
+                    this.arr.push(newstr)
+                }
+                console.log(newstr);
+                let reversestr = " ";
+                while (this.arr.length > 0) {
+                    reversestr += this.arr.pop();
+                }
+                return reversestr
+            }
+        }
+
+        const stack = new Stack("web dev")
+        console.log(stack.reverse());
+    </script>
+</body>
+
+</html>

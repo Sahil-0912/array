@@ -1,0 +1,44 @@
+ * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            background-color: #282c34;
+            color: #61dafb;
+        }
+
+        #date {
+            font-size: 3em;
+            font-weight: bold;
+            height: 330px;
+            width: 330px;
+            text-align: center;
+            padding-top: 130px;
+            border: 2px solid #61dafb;
+            border-radius: 100%;
+            background-color: #20232a;
+            margin: auto;
+            margin-top: 3%;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        h3 {
+            color: grey;
+            font-weight: bold;
+        }
+
+        img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: block;
+            margin: 20px auto
+        }
+
+        h5 {
+            color: grey;
+        }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3,4,5,6]
+        const newset = new Set(arr)
+        console.log(newset);
+        console.log(newset.has(4));
+        newset.add(7)
+        console.log(newset);
+        newset.delete(3)
+        console.log(newset);
+        console.log(newset.size);
+
+
+        const newmap = new Map();
+        console.log(newmap);
+        newmap.set('name','sahil');
+        newmap.set('age',22);
+        console.log(newmap);
+        console.log(newmap.get('name'));
+        console.log(newmap.size);
+        console.log(newmap.has('age'));
+    </script>   
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Queue{
+            constructor(){
+                this.arr = [];
+            }
+            
+            enqueue(element){
+                this.arr.push(element)
+            }
+
+            display(){
+                const result = this.arr.join("=>");
+                console.log(result);
+            }
+
+            dequeue(){
+                if(this.arr.length-1==0){
+                    return "data is empty"
+                }
+                return this.arr.shift()
+            }
+
+            firstvalue(){
+                return this.arr[0]
+            }
+
+            size(){
+                return this.arr.length
+            }
+        }
+        const queue = new Queue()
+        console.log("enqueue........................");
+        queue.enqueue(7)
+        queue.enqueue(8)
+        queue.enqueue(9)
+        queue.enqueue(10)
+        queue.display()
+        console.log("dequeue.......................");
+        console.log(queue.dequeue());
+        console.log(queue.dequeue());
+        console.log("first value....................");
+        console.log(queue.firstvalue());
+        console.log("size...........................");
+        console.log(queue.size());
+    </script>
+</body>
+</html>

@@ -12,21 +12,21 @@
         crossorigin="anonymous"></script>
     <script src="js/login.js"></script>
     <style>
-        body {
-            /* background-color: black; */
-            color: white;
-            background-image: url(img/gradient-black-backgrounds-with-golden-frames_23-2149154115.avif);
-            background-repeat: no-repeat;
-            background-size: cover;
+       
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
-        span{
-            color:yellow
+        form{
+            color: white;
         }
     </style>
 </head>
 
 <body>
-    <div class="col-3 mx-auto my-5 p-3 shadow">
+    <div class="login-form col-3 mx-auto my-5 p-3 shadow">
         <form method="post">
 
             <div class="my-3">
@@ -36,17 +36,148 @@
             </div>
             <div class="my-3">
                 <label for="">Email:</label>
-                <input type="text"  id="email" placeholder="Enter the Email" class="form-control">
+                <input type="text" id="email" placeholder="Enter the Email" class="form-control">
                 <span id="email_error"></span>
             </div>
-            <!-- <div class="my-3">
-                <label for="">Password:</label>
-                <input type="text"  id="Password" placeholder="Enter the Password" class="form-control">
-                <span id="Password_error"></span>
-            </div> -->
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mobile</label>
+                <input type="number" class="form-control" id="mobile" placeholder="Enter The Mobile">
+                <span id="mobile_error"></span>
+              </div>
             <button type="button" class="btn btn-success" onclick="logindata()">Login</button>
         </form>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>
+<script>
+    /* 
+
+
+
+
+*/
+
+var SEPARATION = 50, AMOUNTX = 60, AMOUNTY = 30;
+
+var container;
+var camera, scene, renderer;
+/*
+
+if (window.WebGLRenderingContext){
+	renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+	}
+else {
+	renderer = new THREE.CanvasRenderer();
+	}
+*/
+
+var particles, particle, count = 0;
+
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+
+init();
+animate();
+
+function init() {
+
+	container = document.createElement( 'div' );
+	document.body.appendChild( container );
+	if(container) {
+    	container.className += container.className ? ' waves' : 'waves';
+	}
+
+	camera = new THREE.PerspectiveCamera( 120, window.innerWidth / window.innerHeight, 1, 10000 );
+	camera.position.y = 180; //changes how far back you can see i.e the particles towards horizon
+	camera.position.z = 20; //This is how close or far the particles are seen
+	
+	camera.rotation.x = 0.35;
+	
+	scene = new THREE.Scene();
+
+	particles = new Array();
+
+	var PI2 = Math.PI * 2;
+	var material = new THREE.SpriteCanvasMaterial( {
+
+		color: 0xffffff, //changes color of particles
+		program: function ( context ) {
+
+			context.beginPath();
+			context.arc( 0, 0, 0.5, 0, PI2, true );
+			context.fill();
+
+		}
+
+	} );
+
+	var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i ++ ] = new THREE.Sprite( material );
+			particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+			particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) - 10 );
+			scene.add( particle );
+
+		}
+
+	}
+
+	renderer = new THREE.CanvasRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	//renderer.setClearColor( 0xEAEBE5, 1);
+  renderer.setClearColor( 0x000000, 1);
+	container.appendChild( renderer.domElement );
+
+	window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+function onWindowResize() {
+
+	windowHalfX = window.innerWidth / 2;
+	windowHalfY = window.innerHeight / 2;
+
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	render();
+
+}
+
+function render() {
+
+	var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i++ ];
+			particle.position.y = ( Math.sin( ( ix + count ) * 0.5 ) * 15 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 15 );
+			particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.5 ) + 2 ) * 4 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 4;
+
+		}
+
+	}
+
+	renderer.render( scene, camera );
+
+	// This increases or decreases speed
+	count += 0.05;
+
+}
+</script>
 
 </html>

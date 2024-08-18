@@ -1,6 +1,6 @@
 var stringRejex = /^[A-Z a-z. ]*$/
 // var mobileRegex = /^[0-9]{10}$/
-// var mobileRegex = /^[6789][0-9]{9}$/
+var mobileRegex = /^[6789][0-9]{9}$/
 var emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 var PasswordRegex = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
     function logindata(){
@@ -33,15 +33,13 @@ var PasswordRegex = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
             email_error.innerHTML = " "
         }
 
-        // if(Password==""){
-        //     Password_error.innerHTML = "Enter The Password"
-        // }else if(!PasswordRegex.test(Password)){
-        //     Password_error .innerHTML = "Enter the correct Password"
-        // }else{
-        //     Password_error = " "
-        // }
-
-        // alert("Login SucessFully...")
+        if(mobile==""){
+            mobile_error.innerHTML = "Enter the Mobile number"
+        }else if(!mobileRegex.test(mobile)){
+            mobile_error.innerHTML = "Enter the Valid number"
+        }else{
+            mobile_error.innerHTML = " "
+        }
 
     }
 

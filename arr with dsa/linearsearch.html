@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [10,20,30,40,50,60]
+        const searchitem = 40;
+        var found;
+
+        for(var i=0; i<arr.length; i++){
+            if(arr[i] === searchitem){
+                found = i
+            }
+        }
+        if(found){
+            console.log("value is : = " + found);
+        }else{
+            console.log("valus is not found");
+        }
+    </script>
+</body>
+</html>

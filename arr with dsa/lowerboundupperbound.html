@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function binarysearch(arr, target,findone) {
+            let low = 0;
+            let high = arr.length - 1;
+            let result = -1;
+            while (low <= high) {
+                let mid = Math.floor((low + high) / 2);
+                if (target === arr[mid]) {
+                    result =  mid
+                    if (findone) {
+                        low = mid+1;
+                    }else{
+                        high = mid-1
+                    }
+                }
+                else if (target >= arr[mid]) {
+                    low = mid + 1;
+                }
+
+                else {
+                    high = mid - 1;
+                }
+            }
+            return result
+        }
+        const arr = [12, 32, 21, 44,44,44, 87, 76]
+        const target = 44;
+        const firstindex = binarysearch(arr, target, true)
+        console.log(firstindex);
+        const lastindex = binarysearch(arr, target, false)
+        console.log(lastindex);
+        console.log("index...................");
+
+        const finalresult = firstindex - lastindex+1;
+        console.log("result..................");
+        console.log(finalresult);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       class Queueusingtwostack{
+            constructor(){
+                this.stack1 = [];
+                this.stack2 = [];
+            }
+
+            enqueue(data){
+                this.stack1.push(data)
+            }
+
+            isempty(){
+                return this.stack1.length == 0 && this.stack2.length == 0;
+            }
+
+            dequeue(){
+                if(this.stack2.length==0){
+                    while(this.stack1.length>0){
+                        this.stack2.push(this.stack1.pop())
+                    }
+                }
+                if(this.isempty()){
+                    return "queue is empty"
+                }
+                    return this.stack2.pop()
+            }
+
+            peek(){
+                if(this.stack2.length==0){
+                    while(this.stack1.length>0){
+                        this.stack2.push(this.stack1.pop())
+                    }
+                }
+                    return this.stack2[this.stack2.length-1]
+            }
+
+            size(){
+                return this.stack2.length
+            }
+       }
+
+       const queue = new Queueusingtwostack()
+       queue.enqueue(5);
+       queue.enqueue(6);
+       queue.enqueue(7);
+       console.log("dequeue.............................");
+       console.log(queue.dequeue());
+       console.log(queue.dequeue());
+       console.log("peek.................................");
+       console.log(queue.peek());
+       console.log("size.................................");
+       console.log(queue.size());
+    </script>
+</body>
+
+</html>

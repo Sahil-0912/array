@@ -88,3 +88,8 @@ function addtocart(id){
     }
     localStorage.setItem('cartList',JSON.stringify(cart))
 }
+
+
+
+
+

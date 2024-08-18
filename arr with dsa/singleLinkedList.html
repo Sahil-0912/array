@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+</head>
+
+<body>
+    <script>
+        class Node {
+            constructor(data) {
+                this.data = data
+                this.next = null
+            }
+        }
+
+        class LinkedList {
+            constructor() {
+                this.head = null
+            }
+
+            append(data) {
+                let newNode = new Node(data)
+
+                if (this.head == null) {
+                    this.head = newNode
+                } else {
+                    let current = this.head
+                    while (current.next !== null) {
+                        current = current.next
+                    }
+                    current.next = newNode
+                }
+
+            }
+
+            display() {
+                let current = this.head
+                // console.log(current);
+                // console.log(current.next);
+                // console.log(current.next.next);
+
+                let result = ""
+                while (current != null) {
+                    result += `${current.data} -->`
+                    current = current.next
+                }
+                console.log(`${result} null`);
+            }
+            remove(data) {
+                if (!this.head) {
+                    console.log("empty")
+                }
+                if(this.head.data == data){
+                    this.head = this.head.next
+                }
+
+                let current = this.head
+                // console.log(current.next.data!==data)
+                while(current.next.data!==data){
+                    current = current.next
+                }
+
+                if(current.next){
+                    // console.log(current.next)
+                    // console.log(current.next.next)
+
+                    current.next = current.next.next
+                }
+            }
+
+            check(data){
+                let current = this.head
+                while(current!==null){
+                    if(current.data == data){
+                        console.log(`the Data is exist: ${data}`);
+                        return true
+                    }
+                    current = current.next
+                }
+                    console.log(`the data is not exist: ${data}`);
+                    return false
+            }
+        }
+
+
+
+        const nodeList = new LinkedList()
+        nodeList.append(5)
+        nodeList.append(6)
+        nodeList.append(7)
+        nodeList.append(8)
+        nodeList.display()
+        nodeList.remove(6)
+        nodeList.display()
+        nodeList.check(9)
+        nodeList.display()
+
+    </script>
+</body>
+
+</html>

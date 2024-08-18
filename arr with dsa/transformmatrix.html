@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function zip(arrays) {
+            return arrays[0].map((_, i) => arrays.map(array => array[i]));
+        }
+
+        function transposeArray(arr) {
+            return zip(arr);
+        }
+
+        const originalArray = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        const transposedArray = transposeArray(originalArray);
+
+        console.log("Original Array:");
+        console.log(originalArray);
+
+        console.log("\nTransposed Array:");
+        console.log(transposedArray);
+    </script>
+</body>
+
+</html>
